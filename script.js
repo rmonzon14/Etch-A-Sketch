@@ -11,5 +11,10 @@ function createCells(cols, rows) {
 
 createCells(16, 16);
 
+let cell = container.childNodes;
 
-
+cell.forEach(square => {
+    square.addEventListener('mouseover', () => {
+        square.style.backgroundColor = 'red';
+    })
+});
