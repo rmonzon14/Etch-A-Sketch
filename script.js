@@ -23,12 +23,15 @@ sliderValue.innerHTML = slider.value;
 sliderValue.innerHTML = slider.value + 'x' + slider.value;
 slider.oninput = function() {
     sliderValue.innerHTML = this.value + 'x' + this.value;
+    grid.innerHTML = '';
+    createCells(this.value, this.value);
 }
 
-const reset = document.getElementById('reset-button');
-reset.addEventListener('click', () => {
+const resetButton = document.getElementById('reset-button');
+resetButton.addEventListener('click', () => {
     const squareCount = document.getElementsByClassName('cells');
     for (i = 0; i < squareCount.length; i++) {
         squareCount[i].style.backgroundColor = 'white';
     }
 });
+
