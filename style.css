@@ -14,6 +14,7 @@ body {
 }
 
 #container {
+    width: 600px;
     padding: 30px 100px;
     background: green;
     display: flex;
@@ -23,6 +24,7 @@ body {
 }
 
 #options {
+    background-color: grey;
     margin-bottom: 20px;
     display: flex;
 }
@@ -36,11 +38,11 @@ body {
 }
 
 #grid {
-    height: 500px;
+    height: 400px;
     width: 100%;
     display: grid; 
-    grid-template-rows: repeat(var(--cols-repeat), 30px); 
-    grid-template-columns: repeat(var(--rows-repeat), 30px);
+    grid-template-rows: repeat(var(--cols-repeat), auto); 
+    grid-template-columns: repeat(var(--rows-repeat), auto);
 }
 
 .cells {
