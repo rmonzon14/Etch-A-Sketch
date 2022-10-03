@@ -11,7 +11,22 @@
 <body>
     <div id="container">
         <div id="options">
-            <button id="reset-button">Reset</button>
+            <div id="colors">
+                <button id="random-color">Random Color</button>
+                <select id="select-color">
+                    <option>Please select a color</option>
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="Green">Green</option>
+                    <option value="black">Black</option>
+                    <option value="yellow">Yellow</option>
+                </select>
+            </div>
+
+            <div>
+                <button id="reset-button">Reset</button>
+            </div>
+
             <div>
                 <p>Adjust Square</p>
                 <input type="range" min="2" max="64" value="16" id="slider">
