@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
     <div id="container">
         <div id="options">
-            <div id="colors">
+            <div id="color-options">
                 <button id="random-color">Random Color</button>
                 <select id="select-color">
                     <option>Please select a color</option>
@@ -23,11 +24,7 @@
                 </select>
             </div>
 
-            <div>
-                <button id="reset-button">Reset</button>
-            </div>
-
-            <div>
+            <div id="grid-options">
                 <p>Adjust Square</p>
                 <input type="range" min="2" max="64" value="16" id="slider">
                 <p id="current-slider-value"></p>
@@ -36,6 +33,10 @@
         
         <div id="grid">
             
+        </div>
+
+        <div>
+            <button id="reset-button">Reset</button>
         </div>
     </div>
 </body>
