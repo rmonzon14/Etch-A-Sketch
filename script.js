@@ -18,6 +18,11 @@ function getSelectedColor() {
             squareDivs.style.backgroundColor = selectColor.value;
         })
     });
+
+    if (selectColor.selectedIndex == 0) {
+        selectColor.style.border = 'none';
+        randomColor.style.border = '3px blue solid';
+    }
 }
 
 function getRandomColor() {
@@ -31,24 +36,36 @@ function getRandomColor() {
 
 const selectColor = document.getElementById('select-color');
 selectColor.onchange = () => {
+    randomColor.style.border = 'none';
+    selectColor.style.border = '3px blue solid';
     getSelectedColor();
 } 
 
 const randomColor= document.getElementById('random-color');
 randomColor.addEventListener('click', () => {
+    selectColor.style.border = 'none';
+    randomColor.style.border = '3px blue solid';
+    selectColor.selectedIndex = 0;
     getRandomColor();
 }) 
 
 const slider = document.getElementById('slider');
 const sliderValue = document.getElementById('current-slider-value');
-sliderValue.innerHTML = slider.value;
-sliderValue.innerHTML = slider.value + 'x' + slider.value;
+sliderValue.textContent = slider.value;
+sliderValue.textContent = slider.value + 'x' + slider.value;
 slider.oninput = function() {
-    sliderValue.innerHTML = this.value + 'x' + this.value;
+    sliderValue.textContent = this.value + 'x' + this.value;
+    sliderValue.setAttribute('style', 'font-size: 1.2rem; margin-top: 5px; color: blue');
     grid.innerHTML = ''; 
+    randomColor.style.border = 'none';
+    selectColor.style.border = '1px black solid';
     selectColor.selectedIndex = 0;
     createCells(this.value, this.value);
 }
+
+slider.addEventListener('mouseup', () => {
+    sliderValue.setAttribute('style', 'margin-top: 0px; color: black');
+}) 
 
 const resetButton = document.getElementById('reset-button');
 resetButton.addEventListener('click', () => {
